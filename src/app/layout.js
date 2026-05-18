@@ -3,7 +3,7 @@ import MovieHeader from "../components/movies/MovieHeader";
 import "./globals.css";
 
 export const metadata = {
-  title: "MovieSearch",
+  title: "Explore Cinema - Search and discover movies",
   description: "Search and discover movies",
 };
 
