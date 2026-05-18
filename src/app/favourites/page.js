@@ -5,8 +5,8 @@ import { favouriteMovies } from "../../data/movies";
 export default function FavouritesPage() {
   return (
     <PageShell
-      title="Favourites"
-      subtitle="Movies you have saved — static demo list."
+      title="Popular"
+      subtitle="Trending movies people are watching right now."
     >
       <MovieGrid movies={favouriteMovies} />
     </PageShell>

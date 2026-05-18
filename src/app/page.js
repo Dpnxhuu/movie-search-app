@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <PageShell
       title="Discover Movies"
-      subtitle="Search our collection — static demo with sample results below."
+      subtitle="Search millions of movies, explore what's trending, and find your next watch."
     >
       <section className="mb-10 flex justify-center">
         <SearchBar />
