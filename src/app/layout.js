@@ -5,6 +5,9 @@ import "./globals.css";
 export const metadata = {
   title: "Explore Cinema - Search and discover movies",
   description: "Search and discover movies",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
