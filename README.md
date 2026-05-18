@@ -4,7 +4,7 @@ A movie discovery app built with Next.js and TMDB API.
 
 ## Live Demo
 
-[View Live](<your-vercel-url-here>)
+[View Live](<https://explorecinema.vercel.app/>)
 
 ## Features
 
