@@ -18,6 +18,7 @@ export const ApiDataProvider = ({ children }) => {
     searchError,
     popularError,
     retry,
+    reloadPopular
   } = useCinema(query);
 
   const handleSearch = (e) => {
@@ -43,6 +44,7 @@ export const ApiDataProvider = ({ children }) => {
         search,
         setSearch,
         retry,
+        reloadPopular,
       }}
     >
       {children}

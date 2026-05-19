@@ -12,7 +12,7 @@ export default function HomePage() {
         <SearchBar />
       </section>
 
-      <section style={{minHeight: "600px"}}>
+      <section className="min-h-110 sm:min-h-120 md:min-h-130 lg:min-h-100">
         <MovieGrid/>
       </section>
     </PageShell>

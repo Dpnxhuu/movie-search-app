@@ -11,7 +11,7 @@ export default function MovieGrid() {
   const { movies, result, searchLoading, popularLoading, popularError, searchError } = useContext(myContext);
   const total = result ? result.length : (movies?.length ?? 0);
 
-  if ((!popularError && !searchError) && popularLoading) {
+  if ((!popularError && !searchError && !searchLoading) && popularLoading) {
     return <SkeletonGrid />;
   }
 
@@ -23,7 +23,7 @@ export default function MovieGrid() {
     return <EmptyState />;
   }
 
-  if((!popularLoading && !searchLoading) && searchError){
+  if((!popularLoading && !searchLoading && !popularError) && searchError){
     return <SearchError/>
   }
 

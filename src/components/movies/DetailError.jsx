@@ -1,6 +1,6 @@
 "use client"
 
-export default function DetailError() {
+export default function DetailError({retry}) {
   return (
     <section
       className="flex flex-col max-w-md mx-auto items-center justify-center rounded-2xl border border-red-900/40 bg-red-950/20 px-8 py-16 text-center"
@@ -24,8 +24,15 @@ export default function DetailError() {
       </div>
       <h2 className="text-lg font-semibold text-red-200">Could not load movie details</h2>
       <p className="mt-2 max-w-sm text-sm text-red-300/70">
-        Something went wrong while fetching this movie. Please go back and try again.
+        Something went wrong while fetching this movie.
       </p>
+      <button
+        type="button"
+        onClick={retry}
+        className="mt-6 rounded-lg border mx-auto border-red-800/60 bg-red-900/30 px-5 py-2.5 text-sm font-medium text-red-200 transition hover:bg-red-900/50"
+      >
+        Try again
+      </button>
     </section>
   );
 }

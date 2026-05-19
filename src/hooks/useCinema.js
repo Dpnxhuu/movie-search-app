@@ -10,47 +10,51 @@ const useCinema = (search) => {
   const [popularError, setPopularError] = useState("");
   const [searchError, setSearchError] = useState("");
 
-  const API_KEY = process.env.NEXT_PUBLIC_OMDB_API_KEY;
+  const fetchPopular = useCallback(async () => {
+    try {
+      setPopularError("");
+      setPopularLoading(true);
+      const res = await axios.get("/api/popular");
+      setMovies(res.data.results);
+    } catch (error) {
+      setPopularError(error);
+    } finally {
+      setPopularLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const fetchPopular = async () => {
-      try {
-        setPopularError("");
-        setPopularLoading(true);
-        const res = await axios.get(
-          `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
-        );
-        setMovies(res.data.results);
-      } catch (error) {
-        setPopularError(error);
-      } finally {
-        setPopularLoading(false);
-      }
-    };
     fetchPopular();
-  }, []);
+  }, [fetchPopular]);
 
   const fetchMovie = useCallback(async () => {
     if (!search) return;
     try {
       setSearchError("");
       setSearchLoading(true);
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`,
-      );
+      const res = await axios.get(`/api/search?query=${search}`);
       setResult(res.data.results);
     } catch (error) {
       setSearchError(error);
     } finally {
       setSearchLoading(false);
     }
-  }, [search, API_KEY]);
+  }, [search]);
 
   useEffect(() => {
     fetchMovie();
   }, [fetchMovie]);
 
-  return { result, movies, popularLoading, searchLoading, searchError, popularError, retry: fetchMovie };
+  return {
+    result,
+    movies,
+    popularLoading,
+    searchLoading,
+    searchError,
+    popularError,
+    retry: fetchMovie,
+    reloadPopular: fetchPopular,
+  };
 };
 
 export default useCinema;
