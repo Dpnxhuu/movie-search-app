@@ -11,7 +11,7 @@ export default function MoviePoster({ src, alt, className = "" }) {
 
   return (
     <div
-      className={`flex aspect-[2/3] w-full flex-col items-center justify-center gap-2 bg-zinc-800 text-zinc-500 ${className}`}
+      className={`flex aspect-2/3 w-full flex-col items-center justify-center gap-2 bg-zinc-800 text-zinc-500 ${className}`}
       aria-label={alt}
     >
       <svg
