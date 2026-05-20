@@ -28,7 +28,7 @@ export const ApiDataProvider = ({ children }) => {
     clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       setQuery(value);
-    }, 500);
+    }, 600);
   };
 
   return (
