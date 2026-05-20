@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Search" },
-  { href: "/favourites", label: "Popular" },
+  { href: "/popular", label: "Popular" },
 ];
 
 export default function MovieHeader() {

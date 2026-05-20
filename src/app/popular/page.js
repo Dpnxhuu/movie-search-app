@@ -1,7 +1,7 @@
 import MovieGrid from "../../components/movies/MovieGrid";
 import PageShell from "../../components/movies/PageShell";
 
-export default function FavouritesPage() {
+export default function PopularPage() {
   return (
     <PageShell
       title="Popular"
